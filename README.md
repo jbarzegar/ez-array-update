@@ -1,6 +1,6 @@
 # ez-array-update
 
-> Immutably an element in an array
+> Immutably update an element in an array
 
 This library allows you to update an element in an array with immutability in mind
 
