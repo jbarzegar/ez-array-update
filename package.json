@@ -1,0 +1,43 @@
+{
+  "name": "ez-array-update",
+  "version": "1.0.0",
+  "description": "Immutably an element in an array",
+  "main": "dist/ez-array-update.js",
+  "umd:main": "dist/ez-array-update.umd.js",
+  "module": "dist/ez-array-update.m.js",
+  "source": "src/index.js",
+  "repository": "https://github.com/jbarzegar/ez-array-update",
+  "author": "James Barzegar",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist/",
+    "build": "npm run clean && rollup -c",
+    "dev": "npm run clean && rollup -c -w",
+    "pretest": "npm run build"
+  },
+  "files": ["dist"],
+  "keywords": [
+    "array",
+    "update",
+    "immutable",
+    "functional",
+    "helper",
+    "utility"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.5"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel": "^6.23.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-lodash": "^3.3.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-filesize": "^1.5.0",
+    "rollup-plugin-node-resolve": "^3.3.0"
+  }
+}
