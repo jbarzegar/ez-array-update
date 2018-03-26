@@ -1,7 +1,7 @@
 {
   "name": "ez-array-update",
-  "version": "1.0.0",
-  "description": "Immutably an element in an array",
+  "version": "1.0.1",
+  "description": "Immutably update an element in an array",
   "main": "dist/ez-array-update.js",
   "umd:main": "dist/ez-array-update.umd.js",
   "module": "dist/ez-array-update.m.js",
