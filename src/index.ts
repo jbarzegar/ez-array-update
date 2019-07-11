@@ -1,5 +1,4 @@
-import isFunction from 'lodash/isFunction'
-import isObject from 'lodash/isObject'
+import typeOf from "just-typeof";
 
 /**
  * @name updateArray
@@ -8,25 +7,28 @@ import isObject from 'lodash/isObject'
  * @param {any} updateData A value used to update the element(s) selected via the `filter` method
  * @returns {array} Your updated array
  */
-export default function(array, filter, updateData) {
-  if (!Array.isArray(array)) {
-    throw new TypeError('Argument was not a type of: Array')
-  }
 
-  if (!isFunction(filter)) {
-    throw new Error(`'filter' is not a function`)
-  }
+export default function updateArray(
+  array: any[],
+  filter: (value: any, index: number) => boolean,
+  updateData: any
+): Array<any> {
+  if (!Array.isArray(array))
+    throw new TypeError("Argument was not a type of: Array");
 
-  const arrayIndex = array.findIndex(filter)
+  if (typeof filter !== "function")
+    throw new Error(`'filter' is not a function`);
+
+  const arrayIndex = array.findIndex(filter);
 
   // If it's an object handle it differently
-  if (isObject(updateData)) {
+  if (typeOf(updateData) === "object") {
     return Object.assign([...array], {
       [arrayIndex]: { ...array[arrayIndex], ...updateData }
-    })
+    });
   }
 
   return Object.assign([...array], {
     [arrayIndex]: updateData
-  })
+  });
 }
