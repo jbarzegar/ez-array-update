@@ -31,7 +31,7 @@
   "devDependencies": {
     "ava": "2.4.0",
     "husky": "3.0.5",
-    "microbundle": "0.11.0",
+    "microbundle": "0.13.1",
     "pretty-quick": "1.11.1"
   }
 }
